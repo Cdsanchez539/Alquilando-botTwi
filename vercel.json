@@ -1,7 +1,15 @@
 {
-  "functions": {
-    "api/handler.php": {
-      "runtime": "vercel-php@0.6.1"
+  "version": 2,
+  "builds": [
+    {
+      "src": "handler.php",
+      "use": "vercel-php@0.6.1"
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "handler.php"
+    }
+  ]
 }
